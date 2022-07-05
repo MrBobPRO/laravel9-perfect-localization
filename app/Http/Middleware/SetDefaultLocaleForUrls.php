@@ -20,7 +20,7 @@ class SetDefaultLocaleForUrls
         URL::defaults(['locale' => $request->locale]);
 
         app()->setLocale($request->locale);
-
+        
         return $next($request);
     }
 }

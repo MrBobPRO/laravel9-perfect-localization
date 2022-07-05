@@ -23,7 +23,7 @@
     <div class="block">
         <h2>Static text</h2>
         <p>
-            This is multilanguage static text: <b>"{{ __('Welcome') }}"</b>
+            This is multilanguage static text: <b>"@lang('Welcome')"</b>
             <br>Static text translations stored in lang/json files
         </p>
     </div>
@@ -35,5 +35,14 @@
             <li><a href="{{ route('contacts') }}">Visit contacts page</a></li>
         </ul>
     </div>
+
+    @foreach ($posts as $post)
+    <div class="block">
+        <h2>Post title: {{ $post->translation()->title }}</h2>
+        <p>
+            {{ $post->translation()->content }}
+        </p>
+    </div>
+    @endforeach
 </body>
 </html>
